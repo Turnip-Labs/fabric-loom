@@ -26,15 +26,6 @@ group = 'net.fabricmc'
 def baseVersion = '1.13'
 
 def ENV = System.getenv()
-//if (ENV.BUILD_NUMBER) {
-//	if (ENV.EXPERIMENTAL) {
-//		version = baseVersion + '.0-alpha.' + ENV.BUILD_NUMBER
-//	} else {
-//		version = baseVersion + '.' + ENV.BUILD_NUMBER
-//	}
-//} else {
-//	version = baseVersion + '.local'
-//}
 version = baseVersion + '.0-bta'
 
 // We must build against the version of Kotlin Gradle ships with.
@@ -287,41 +278,6 @@ import org.w3c.dom.Element
 import org.w3c.dom.Node
 
 publishing {
-//	publications {
-//		if (!ENV.EXPERIMENTAL) {
-//			// Also publish a snapshot so people can use the latest version if they wish
-//			snapshot(MavenPublication) { publication ->
-//				groupId = project.group
-//				artifactId = project.base.archivesName.get()
-//				version = baseVersion + '-SNAPSHOT'
-//
-//				from components.java
-//			}
-//
-//			gradlePlugin.plugins.forEach { plugin ->
-//				// Manually crate the plugin marker for snapshot versions
-//				it.create(plugin.id + "SnapshotMarker", MavenPublication) { publication ->
-//					groupId = plugin.id
-//					artifactId = plugin.id + '.gradle.plugin'
-//					version = baseVersion + '-SNAPSHOT'
-//
-//					pom.withXml({
-//						// Based off org.gradle.plugin.devel.plugins.MavenPluginPublishPlugin
-//						Element root = asElement()
-//						Document document = root.getOwnerDocument()
-//						Node dependencies = root.appendChild(document.createElement('dependencies'))
-//						Node dependency = dependencies.appendChild(document.createElement('dependency'))
-//						Node groupId = dependency.appendChild(document.createElement('groupId'))
-//						groupId.setTextContent('net.fabricmc')
-//						Node artifactId = dependency.appendChild(document.createElement('artifactId'))
-//						artifactId.setTextContent('fabric-loom')
-//						Node version = dependency.appendChild(document.createElement('version'))
-//						version.setTextContent(project.version)
-//					})
-//				}
-//			}
-//		}
-//	}
 	repositories {
 		maven {
 			name = "signalumMaven"
