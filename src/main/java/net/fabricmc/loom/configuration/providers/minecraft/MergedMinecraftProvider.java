@@ -106,7 +106,7 @@ public final class MergedMinecraftProvider extends MinecraftProvider {
 		Objects.requireNonNull(serverJar, "Cannot merge null server jar?");
 
 		try (var jarMerger = new MinecraftJarMerger(clientJar, serverJar, mergedJar)) {
-			jarMerger.enableSyntheticParamsOffset();
+//			jarMerger.enableSyntheticParamsOffset();
 			jarMerger.merge();
 		}
 	}
